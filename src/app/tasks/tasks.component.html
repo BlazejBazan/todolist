@@ -1,0 +1,5 @@
+<h2>{{task.name | uppercase}} Szczegóły</h2>
+<div><span>opis: </span>{{task.description}}</div>
+<div><span>priorytet: </span>{{task.priority}}</div>
+<div><button *ngIf=task.done>Przywróć zadanie</button>
+<div><button *ngIf=!task.done>Oznacz jako wykonane</button>
