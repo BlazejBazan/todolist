@@ -6,6 +6,7 @@ import { Task } from '../task';
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.css']
 })
+
 export class TasksComponent implements OnInit {
 
   task: Task = {

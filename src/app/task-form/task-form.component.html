@@ -1,1 +1,10 @@
-<p>task-form works!</p>
+<label for="name">Nazwa zadania</label>
+<input type="text" id="name" [(ngModel)]="task.name" name="name">
+<label for="priority">Priorytet zadania</label>
+<select id="priority">
+    <option *ngFor="let priority of priority" [value]="priority">{{priority}}</option>
+</select>
+<label for="description">Opis zadania</label>
+<input type="text" id="description" [(ngModel)]="task.description" description="description">
+<div><button *ngIf=task.done>Przywróć zadanie</button>
+<div><button *ngIf=!task.done>Oznacz jako wykonane</button>
