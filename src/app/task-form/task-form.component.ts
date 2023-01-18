@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../task';
+import { PRIORITY } from '../priority-dictionary'
 
 @Component({
   selector: 'app-task-form',
@@ -9,8 +10,8 @@ import { Task } from '../task';
 
 export class TaskFormComponent implements OnInit {
 
-  priority = ['Pilne', 'Ważne', 'Normalne', 'Mało ważne', 'Mało pilne'];
-  task = new Task('Projekt CUDA', this.priority[2], 'Opis zadania utajniony', false);
+  priority = PRIORITY;
+  task = new Task(2, 'Projekt CUDA', PRIORITY[2], 'Opis zadania utajniony', false);
 
   constructor() { }
 
