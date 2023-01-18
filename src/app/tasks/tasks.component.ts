@@ -9,12 +9,7 @@ import { Task } from '../task';
 
 export class TasksComponent implements OnInit {
 
-  task: Task = {
-    name: 'projekt CUDA',
-    priority: 'Normalny',
-    description: 'Projekt Nvidia',
-    done: true
-  };
+  task = new Task('projekt CUDA', 'Normalny', 'Projekt Nvidia', true);
 
   constructor() { }
 
