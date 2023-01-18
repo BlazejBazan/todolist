@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../task';
+import { TASKS } from '../mock-tasks';
 
 @Component({
   selector: 'app-tasks',
@@ -9,11 +10,20 @@ import { Task } from '../task';
 
 export class TasksComponent implements OnInit {
 
-  task = new Task(1, 'projekt CUDA', 'Normalny', 'Projekt Nvidia', true);
+  tasks = TASKS;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectedTask?: Task;
+  onSelect(task: Task): void {
+    if (this.selectedTask == task) {
+      this.selectedTask = undefined;
+    } else {
+      this.selectedTask = task;
+    };
   }
 
 }

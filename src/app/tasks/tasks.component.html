@@ -1,5 +1,19 @@
-<h2>{{task.name | uppercase}} Szczegóły</h2>
-<div><span>opis: </span>{{task.description}}</div>
-<div><span>priorytet: </span>{{task.priority}}</div>
-<div><button *ngIf=task.done>Przywróć zadanie</button>
-<div><button *ngIf=!task.done>Oznacz jako wykonane</button>
+<h2>Moje zadania</h2>
+<ul class="tasks">
+    <li *ngFor="let task of tasks">
+        <button [class.selected]="task === selectedTask" type="button" (click)="onSelect(task)">
+            <span class="checkmark" id="done" *ngIf=task.done>DONE</span>
+            <span class="checkmark" id="toDo" *ngIf=!task.done>TODO</span>
+            <span class="name">{{task.name}}</span>
+            <span class="priority">{{task.priority}}</span>
+        </button>
+    </li>
+</ul>
+
+<div *ngIf="selectedTask">
+    <h2>{{selectedTask.name | uppercase}}</h2>
+    <div><span>opis: </span>{{selectedTask.description}}</div>
+    <div><span>priorytet: </span>{{selectedTask.priority}}</div>
+    <div><button *ngIf=selectedTask.done (click)="selectedTask.makeToDo()">Przywróć zadanie</button>
+    <div><button *ngIf=!selectedTask.done (click)="selectedTask.makeDone()">Oznacz jako wykonane</button>
+</div>
