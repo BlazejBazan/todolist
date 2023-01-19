@@ -10,10 +10,4 @@
     </li>
 </ul>
 
-<div *ngIf="selectedTask">
-    <h2>{{selectedTask.name | uppercase}}</h2>
-    <div><span>opis: </span>{{selectedTask.description}}</div>
-    <div><span>priorytet: </span>{{selectedTask.priority}}</div>
-    <div><button *ngIf=selectedTask.done (click)="selectedTask.makeToDo()">Przywróć zadanie</button>
-    <div><button *ngIf=!selectedTask.done (click)="selectedTask.makeDone()">Oznacz jako wykonane</button>
-</div>
+<app-task-detail [task]="selectedTask"></app-task-detail>

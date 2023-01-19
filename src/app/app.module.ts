@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskFormComponent } from './task-form/task-form.component';
+import { HeroDetailComponent } from './task-detail/task-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TasksComponent,
-    TaskFormComponent
+    TaskFormComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
