@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Task } from './task';
 import { TASKS } from './mock-tasks';
+import { MessageService } from './message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,9 @@ import { TASKS } from './mock-tasks';
 export class TaskService {
 
   getTasks(): Task[] {
+    this.messageService.add('TaskService: pobranie zadań');
     return TASKS;
   };
 
-  constructor() { }
+  constructor(private messageService: MessageService) { }
 }
