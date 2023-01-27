@@ -1,7 +1,16 @@
 <div *ngIf="task">
     <h2>{{task.name | uppercase}}</h2>
-    <div><span>opis: </span>{{task.description}}</div>
-    <div><span>priorytet: </span>{{task.priority}}</div>
-    <div><button *ngIf=task.done (click)="task.makeToDo()">Przywróć zadanie</button>
-    <div><button *ngIf=!task.done (click)="task.makeDone()">Oznacz jako wykonane</button>
+    <div>
+      <label for="task-description">Opis: </label>
+      <input id="task-description" [(ngModel)]="task.description" placeholder="Opis zadania"/>
+    </div>
+    <div>
+      <label for="task-priority">Priorytet: </label>
+      <select id="task-priority" [(ngModel)]="task.priority">
+        <option *ngFor="let p of priority" [ngValue]="p">{{p}}</option>
+      </select>
+    </div>
+    <button *ngIf=task.done (click)="task.makeToDo()">Przywróć zadanie</button>
+    <button *ngIf=!task.done (click)="task.makeDone()">Oznacz jako wykonane</button>
+    <button type="button" (click)="goBack()">Cofnij</button>
 </div>

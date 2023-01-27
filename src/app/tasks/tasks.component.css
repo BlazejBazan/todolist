@@ -1,90 +1,55 @@
-/* TasksComponent's private CSS styles */
 .tasks {
     margin: 0 0 2em 0;
     list-style-type: none;
     padding: 0;
     width: 25em;
   }
-  
-  .tasks li {
-    display: flex;
-  }
-  
-  .tasks button {
-    flex: 1;
-    cursor: pointer;
+
+.tasks li {
     position: relative;
-    left: 0;
-    background-color: #EEE;
-    margin: .5em;
-    padding: 0;
-    border-radius: 4px;
-    display: flex;
-    align-items: stretch;
-    height: 1.8em;
-    border: none;
+    cursor: pointer;
   }
-  
-  .tasks button:hover {
-    color: #2c3a41;
-    background-color: #e6e6e6;
-    left: .1em;
-  }
-  
-  .tasks button:active {
-    background-color: #525252;
-    color: #fafafa;
-  }
-  
-  .tasks button.selected {
-    background-color: black;
-    color: white;
-  }
-  
-  .tasks button.selected:hover {
-    background-color: #505050;
-    color: white;
-  }
-  
-  .tasks button.selected:active {
-    background-color: black;
-    color: white;
-  }
-  
-  .tasks .checkmark {
-    width: 3em;
-    display: inline-block;
-    font-size: small;
-    padding: 0.45em 0.7em 0 0.7em;
-    line-height: 1em;
-    margin-right: .8em;
-    border-radius: 4px 0 0 4px;
-  }
-  
-  .tasks .checkmark#done {
-    color: white;
-    background-color: #405061d7;
-  }
-  
-  .tasks .checkmark#toDo {
-    color: black;
-    background-color: #b2c3d4d8;
-  }
-  
-  .tasks .name {
-    align-self: center;
-    width: 16em;
-  }
-  
-  .tasks .priority {
-    align-self: center;
-    color: white;
-    display: inline-block;
-    font-size: small;
-    line-height: 1em;
-    margin-left: .8em;
-    border-radius: 0 4px 4px 0;
-    padding: 0.4em 0.7em 0.4em 0.7em;
-    width: 6em;
-    background-color: #3c5672d3;
-  }
+
+.tasks li:hover {
+  left: .1em;
+}
+
+.tasks .task {
+  color: #333;
+  text-decoration: none;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+}
+
+.tasks .task:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+}
+
+.tasks .task:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+
+.tasks .priority {
+  display: inline-block;
+  font-size: small;
+  width: 5em;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #405061;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  min-width: 16px;
+  text-align: center;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}

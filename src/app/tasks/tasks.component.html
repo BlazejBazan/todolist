@@ -1,13 +1,10 @@
 <h2>Moje zadania</h2>
 <ul class="tasks">
     <li *ngFor="let task of tasks">
-        <button [class.selected]="task === selectedTask" type="button" (click)="onSelect(task)">
-            <span class="checkmark" id="done" *ngIf=task.done>DONE</span>
-            <span class="checkmark" id="toDo" *ngIf=!task.done>TODO</span>
-            <span class="name">{{task.name}}</span>
-            <span class="priority">{{task.priority}}</span>
-        </button>
+        <div class="task" routerLink="/detail/{{task.id}}">
+          <span class="priority">{{task.priority}}</span>
+          <span><del *ngIf="task.done">{{task.name}}</del></span>
+          <span *ngIf="!task.done">{{task.name}}</span>
+        </div>
     </li>
 </ul>
-
-<app-task-detail [task]="selectedTask"></app-task-detail>

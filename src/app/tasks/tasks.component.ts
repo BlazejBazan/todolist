@@ -19,17 +19,8 @@ export class TasksComponent implements OnInit {
     this.getTasks();
   }
 
-  selectedTask?: Task;
-  onSelect(task: Task): void {
-    if (this.selectedTask == task) {
-      this.selectedTask = undefined;
-    } else {
-      this.selectedTask = task;
-    };
-  }
-
   getTasks(): void {
-    this.tasks = this.tasksService.getTasks();
+    this.tasksService.getTasks().subscribe((tasks: Task[]) => this.tasks = tasks);
   }
 
 }
